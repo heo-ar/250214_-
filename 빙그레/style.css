@@ -1,0 +1,683 @@
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css);
+
+* { margin: 0; padding: 0; text-align: center; } /* 전체 태그에 영향 줄 수 있음 */
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+body {
+    font-family: 'NanumSquareAc', sans-serif;
+    position: relative; /* 배경을 고정 */
+    background: transparent;
+    color: #000000;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Binggrae';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: "Binggrae";
+    src: url("font/Binggrae-Bold.woff") format("woff"),
+    url("font/Binggrae-Bold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    font-family: 'Binggrae';
+    font-weight: normal;
+}
+
+/* ------------------------------ 헤더 ------------------------------ */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+
+#h_logo {
+    position: relative;
+}
+
+.nav-con {
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    flex-grow: 1; 
+    justify-content: center;
+}
+
+#menu {
+    display: flex;
+
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menu > li {
+    position: relative;
+    margin-right: 50px;
+}
+#menu > li:last-child {
+    margin: 0;
+    background: transparent; 
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+
+#lang {
+    display: flex;
+    margin-right: 20px;
+    align-items: center;
+    position: relative;
+}
+
+#lang li {
+    display: flex;  
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+#lang li a {
+    display: flex;
+    align-items: center;
+}
+
+#lang li::after { 
+    font-size: 12px;
+    margin-left: 5px;
+    display: inline-block;
+}
+
+.hidden2 {
+    display: none;
+}
+
+
+#lang-menu {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: absolute;
+    right: 50px; /* KR과 햄버거 메뉴를 오른쪽 정렬 */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+/* 햄버거바 기본 상태 */
+.ham-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10000;
+}
+
+/* 햄버거바 줄 */
+.ham-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+}
+
+/* 클릭 시 햄버거바가 X자로 변환 */
+.ham-menu.active span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.ham-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.ham-menu.active span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+#fullscreen-menu {
+    position: fixed;
+    top: -100vh; /* 처음에는 화면 위쪽으로 숨김 */
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: top 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    z-index: 9999; /* 모든 요소 위에 표시 */
+}
+
+    /* 풀스크린 메뉴가 활성화될 때 */
+    #fullscreen-menu.active {
+        top: 0;
+        opacity: 1;
+    }
+
+/* 풀스크린 메뉴 안의 리스트 */
+#fullscreen-menu ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#fullscreen-menu ul li {
+    margin: 20px 0;
+}
+
+#fullscreen-menu ul li a {
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* 닫기 버튼 */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+
+
+/* ------------------------------ 오른쪽 고정 버튼(aside/top btn) ------------------------------ */
+
+
+#btns {
+    position: fixed;
+    right: 50px;
+    bottom: 100px;
+    width: 70px;
+    height: 230px;
+    z-index: 50;
+}
+
+#btns > #chat_btn {
+    margin: 0;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+}
+
+#btns > #chat_btn > a > img {
+    width: 70%;
+}
+
+#btns > #shop_btn {
+    top: 10px;
+    position: relative;
+    background: black;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    margin: 0;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+}
+
+#btns > #top_btn {
+    top: 20px;
+    position: relative;
+    background: black;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    margin: 0;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ------------------------------ 메인배너(영상)/서치창 ------------------------------ */
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* 화면 높이만큼만 설정 */
+    overflow: hidden;
+    z-index: -10; 
+}
+
+.video-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(50, 50, 50, 0.3); /* 회색 + 투명도 30% */
+    z-index: 1; /* 영상 위로 배치 */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%;
+    height: 120%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.search-con {
+    font-family: 'Binggrae';
+    font-weight: normal;
+    position: absolute;
+    top: 24%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    text-align: center;
+    z-index: 100;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+.search-box input {
+    font-family: 'Binggrae';
+    font-weight: normal;    
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.search-btn {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.hashtag-con {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.hashtag {
+    padding: 8px 15px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    cursor: pointer;
+    color: #2e2e2e;
+    background: rgba(255, 255, 255, 0.774); /* 회색 + 투명도 30% */
+}
+
+/* ------------------------------ 배너 ------------------------------ */
+
+.ban {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.ban video {
+    position: absolute;
+    object-fit: cover;
+    transform: translate(-20%, -20%);
+}
+
+
+/* ------------------------------ 메인 이후 ------------------------------ */
+
+.sec {
+    position: relative; 
+    display: block;
+    box-sizing: border-box;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.h1s {
+    margin-top: 100px;
+    padding-bottom: 40px;
+}
+
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: calc(100% * 6 / 7);
+    margin: 0 auto;
+    position: relative; 
+}
+
+.product-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover img {
+    transform: scale(1.1);
+}
+
+.sec h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.arrow-btn {
+    position: absolute;
+    background: none;
+    border: none;
+    right: -50px;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.arrow-btn:hover {
+    opacity: 0.7;
+}
+
+/* ------------------------------ 메인 이후 ------------------------------ */
+
+
+.customer-inquiry {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.customer-inquiry h1 {
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.inquiry-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.inquiry-item {
+    background-color: #f5f5f5;
+    padding: 40px;
+    border-radius: 30px;
+    width: 480px;
+    height: 240px;
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.inquiry-item:hover {
+    transform: translateY(-10px);
+}
+
+.inquiry-item .inquiry-title {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: left;
+    font-family: 'Binggrae';
+}
+
+.inquiry-item .inquiry-description {
+    font-size: 1rem;
+    margin-bottom: 80px;
+    text-align: left;
+    line-height: 25px;
+}
+
+.inquiry-item .number {    
+    font-family: 'Binggrae';
+    color: #333;
+    font-size: 3rem;
+    text-align: left;
+    margin: 40px 0 40px;
+    letter-spacing: -2px;
+}
+
+.hour {
+    color: #E63329;
+    font-weight: 600;
+    margin-left: 20px;
+    letter-spacing: -1.5px;
+}
+
+.consult-btn {
+    background-color: #E63329;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.consult-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.inquiry-item.email {   
+    background-color: #EEF8FB;
+    background-image: url('img/sec04_backimg01.png'); /* 배경 이미지 */
+    background-size: contain;
+    background-repeat: no-repeat; /* 배경 이미지가 반복되지 않도록 설정 */
+}
+
+
+.inquiry-item.phone {
+    background-color: #FDF3F2;
+    background-image: url('img/sec04_backimg02.png'); /* 배경 이미지 */
+    background-size: contain;
+    background-repeat: no-repeat; /* 배경 이미지가 반복되지 않도록 설정 */
+}
+
+
+/*  */
+
+
+.report-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.report-section h1 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.report-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    
+}
+
+.report-description {
+    margin-top: 25px;
+}
+
+.report-item {
+    background-color: #f5f5f5;
+    padding: 40px;
+    border-radius: 30px;
+    width: 480px;
+    height: 150px;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.report-btn {
+    background-color: #E63329;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.report-btn:hover {
+    background-color: #E63329;
+}
+
+.report-item.cyber {
+    background-color: #FEFEFE; 
+    box-shadow: inset 0 7px 20px rgba(0, 0, 0, 0.06);
+}
+
+.report-item.safety {
+    background-color: #FEFEFE; 
+    box-shadow: inset 0 7px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+/* ------------------------------ 푸터 ------------------------------ */
+
+footer {
+    background-color: #1b1b1b;
+    color: #ffffff7e;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.f_left {
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    flex-grow: 1; 
+    justify-content: space-between;
+}
+
+.footer-logo img {
+    width: 120px; /* 로고 크기 */
+    margin-bottom: 20px;
+}
+
+
+.f-ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+.f_left ul > li {
+    margin: 0 10px;
+}
+
+.address {
+    margin: 40px 0 20px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.copy {
+    margin-bottom: -30px;
+}
+
+/* ------------------------------ 모바일 버전 ------------------------------ */
+
+@media (max-width: 1200px) { 
+    
+}

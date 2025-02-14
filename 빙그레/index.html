@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>허아름-빙그레</title>
+        <!-- 스타일 연결 -->
+        <link rel="stylesheet" href="style.css">
+        <!-- 파비콘 -->
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"> 
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
+</head>
+<body>
+    <!-- ------------------------------ 헤더 ------------------------------ -->
+    <header>
+        <a href="#" id="h_logo"><img src="img/logo-pc.png" alt="로고"></a>
+        <div class="nav-con">
+            <nav>
+                <ul id="menu"> <!-- 기존 메뉴 유지 -->
+                    <li><a href="#">회사소개</a>
+                        <ul class="hidden">
+                            <li><a href="#">히스토리</a></li>
+                            <li>경영이념</li>
+                            <li>사업분야</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">제품소개</a>
+                        <ul class="hidden">
+                            <li><a href="#">우유/치즈</a></li>
+                            <li>아이스크림</li>
+                            <li>발효유</li>
+                            <li>커피</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">지속가능경영</a>
+                        <ul class="hidden">
+                            <li>지속가능경영 체계</li>
+                            <li>에코</li>
+                            <li>글로벌</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">투자정보</a>
+                        <ul class="hidden">
+                            <li>재무정보</li>
+                            <li>주식정보</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">뉴스룸</a>
+                        <ul class="hidden">
+                            <li>새소식</li>
+                            <li>보도자료</li>
+                            <li>빙그레 스토리</li>
+                        </ul>
+                    </li>
+                    <li><a href="#">고객센터</a>
+                        <ul class="hidden">
+                            <li>고객상담</li>
+                            <li>제품공급문의</li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    
+        <div id="lang-menu">
+            <ul id="lang">
+                <li><a href="#">KR</a></li>
+                <li>/</li>
+                <li><a href="#">EN</a></li>
+            </ul>
+        </div>
+    
+        <div class="ham-menu" id="ham-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <div id="fullscreen-menu">
+        <ul>
+            <li><a href="#">회사소개</a></li>
+            <li><a href="#">제품소개</a></li>
+            <li><a href="#">지속가능경영</a></li>
+            <li><a href="#">투자정보</a></li>
+            <li><a href="#">뉴스룸</a></li>
+            <li><a href="#">고객센터</a></li>
+        </ul>
+    </div>
+    <!-- -------------------------- 오른쪽 고정 버튼 ------------------------- -->
+    <aside>
+        <div id="btns">
+            <div id="chat_btn"><a href="#"><img src="img/chat_img.png" alt="상담버튼"></a></div>
+            <div id="shop_btn"><a href="#">SHOP</a></div>
+            <div id="top_btn"><a href="#"><img src="img/fix_arrow.png" alt="올리는 버튼"></a></div>
+        </div>
+    </aside>
+    <!-- ------------------------- 메인배너(영상)/서치창 -------------------------- -->
+    <main>
+        <div class="ban">
+            <div class="video-container">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/Y1HH--H853Q?autoplay=1&mute=1&loop=1&playlist=Y1HH--H853Q&controls=0&showinfo=0&modestbranding=1" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        <div class="search-con">
+            <div class="search-box">
+                <input type="text" placeholder="제품명을 입력해 주세요">
+                <button class="search-btn">SEARCH</button>
+            </div>
+            <div class="hashtag-con">
+                <span class="hashtag">#바나나맛우유</span>
+                <span class="hashtag">#더단백</span>
+                <span class="hashtag">#슈퍼콘</span>
+                <span class="hashtag">#요플레</span>
+                <span class="hashtag">#아카펠라</span>
+            </div>
+        </div>
+    <!-- --------------------------------------------------- -->
+    <section class="sec">
+        <h1 class="h1s">행복한 빙그레의 맛!</h1>
+        <div class="section">
+            <a href="#" class="product-item"><img src="img/01.png" alt="음식1"></a>
+            <a href="#" class="product-item"><img src="img/02.png" alt="음식2"></a>
+            <a href="#" class="product-item"><img src="img/03.png" alt="음식3"></a>
+            <a href="#" class="product-item"><img src="img/04.png" alt="음식4"></a>
+            <a href="#" class="product-item"><img src="img/05.png" alt="음식5"></a>
+            <a href="#" class="product-item"><img src="img/06.png" alt="음식6"></a>
+            <a href="#" class="product-item"><img src="img/07.png" alt="음식7"></a>
+            <button class="arrow-btn" id="next-btn"><img src="img/next_arrow.png" alt=""></button>
+        </div>
+    </section>
+        <section class="sec">
+            <h1 class="h1s">BRAND SHOP</h1>
+            <div class="section">
+                <a href="#"class="product-item"><img src="img/d_01.png"></a>
+                <a href="#"class="product-item"><img src="img/d_02.png"></a>
+                <a href="#"class="product-item"><img src="img/d_03.png"></a>
+                <a href="#"class="product-item"><img src="img/d_04.png"></a>
+                <a href="#"class="product-item"><img src="img/d_05.png"></a>
+                <a href="#"class="product-item"><img src="img/d_08.png"></a>
+                <a href="#"class="product-item"><img src="img/d_09.png"></a>
+                <button class="arrow-btn" id="next-btn"><img src="img/next_arrow.png" alt=""></button>
+            </div>
+
+        </section>
+        <div class="customer-inquiry">
+            <h1 class="h1s">고객문의 및 불편사항</h1>
+            <div class="inquiry-container">
+                <div class="inquiry-item email">
+                    <p class="inquiry-title">이메일 상담</p>
+                    <p class="inquiry-description">
+                        빙그레에 궁금한 사항을 문의해 주세요. <br> 최대한 빠른 시일내에 친절하게 답변해드리겠습니다.
+                    </p>
+                    <button class="consult-btn">상담하기</button>
+                </div>
+                <div class="inquiry-item phone">
+                    <p class="inquiry-title">전화 상담</p>
+                    <div class="inquiry-description">
+                        <p class="number">080.022.0056</p>
+                        월~금(공휴일 제외) <span class="hour">09:00~17:30</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <article class="report-section">
+            <h1 class="h1s">빙그레 임직원 및 종사자 온라인 제보</h1>
+            <div class="report-container">
+                <div class="report-item cyber">
+                    <p class="report-description">
+                        빙그레 임직원의 부당한 요구 또는 업무 처리,<br> 인권 고충, 기타 부정행위 등에 대한 제보
+                    </p>
+                    <button class="report-btn">사이버 신고센터</button>
+                </div>
+                <div class="report-item safety">
+                    <p class="report-description">
+                        빙그레 종사자의 유해·위험요소 및 <br> 안전·보건에 관한 의견 제보
+                    </p>
+                    <button class="report-btn">안전신문고</button>
+                </div>
+            </div>
+        </article>
+    </main>
+    <!-- --------------------------------------------------- -->
+    <footer>
+        <div class="f_left">
+            <a href="#" class="footer-logo"><img src="img/f_logo.png" alt="f_logo"></a>
+            <ul class="f-ul">
+                <li><a href="#">개인정보처리</a></li>
+                <li><a href="#">오시는길</a></li>
+                <li><a href="#">고객센터</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="address">경기도 남양주시 다산동 4344-3 <br> 경기도 남양주시 다산순환로 45(다산동)</p>
+            <p class="copy">ⓒ Binggrae all rights reserved.</p>
+        </div>
+    </footer>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
